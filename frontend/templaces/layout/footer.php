@@ -74,19 +74,19 @@ if(!defined('_CODE')){
                 <div class="row gy-5 g-4">
                     <div class="col-md-6">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Company</h6>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
-                        <a class="btn btn-link" href="">Support</a>
+                        <a class="btn btn-link" href="?modules=home&action=about">About Us</a>
+                        <a class="btn btn-link" href="?modules=contact&action=contact">Contact Us</a>
+                        <a class="btn btn-link" href="#">Privacy Policy</a>
+                        <a class="btn btn-link" href="#">Terms & Condition</a>
+                        <a class="btn btn-link" href="#">Support</a>
                     </div>
                     <div class="col-md-6">
                         <h6 class="section-title text-start text-primary text-uppercase mb-4">Services</h6>
-                        <a class="btn btn-link" href="">Food & Restaurant</a>
-                        <a class="btn btn-link" href="">Spa & Fitness</a>
-                        <a class="btn btn-link" href="">Sports & Gaming</a>
-                        <a class="btn btn-link" href="">Event & Party</a>
-                        <a class="btn btn-link" href="">GYM & Yoga</a>
+                        <a class="btn btn-link" href="?modules=Room&action=service">Food & Restaurant</a>
+                        <a class="btn btn-link" href="?modules=Room&action=service">Spa & Fitness</a>
+                        <a class="btn btn-link" href="?modules=Room&action=service">Sports & Gaming</a>
+                        <a class="btn btn-link" href="?modules=Room&action=service">Event & Party</a>
+                        <a class="btn btn-link" href="?modules=Room&action=service">GYM & Yoga</a>
                     </div>
                 </div>
             </div>

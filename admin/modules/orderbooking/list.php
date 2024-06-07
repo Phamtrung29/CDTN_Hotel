@@ -25,9 +25,7 @@ $count = $countRow['total']; // Trích xuất giá trị 'total'
 $totalPages = ceil($count / $rowsPerPage);
 $flashMsg = getFlashData('smg');
 $flashMsgType = getFlashData('smg_type');
-if (!empty($flashMsg)) {
-    echo "<div class='alert alert-$flashMsgType'>$flashMsg</div>";
-}
+
 ?>
 
 <body id="page-top">
@@ -38,12 +36,16 @@ if (!empty($flashMsg)) {
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Flash message -->
 
             <!-- Main Content -->
             <?php
         require_once('templaces/layout/navbar.php');?>
             <div class="container-fluid">
                 <h2>Quản lý đơn đặt phòng</h2>
+                <?php if (!empty($flashMsg)): ?>
+                <div class="alert alert-<?php echo $flashMsgType; ?>"><?php echo $flashMsg; ?></div>
+                <?php endif; ?>
                 <div class="mb-3">
                     <a href="?modules=orderbooking&action=add" class="btn btn-success btn-sm">Thêm Đơn Đặt Phòng <i
                             class="fas fa-plus"></i></a>
@@ -68,12 +70,15 @@ if (!empty($flashMsg)) {
                         </div>
                     </form>
                 </div>
+                <td>
+                    <form method="POST" action="?modules=orderbooking&action=check_in">
+                        <input type="hidden" name="order_id" value="<?php echo $item['order_id']; ?>">
+                        <input type="text" name="confirmation_code" placeholder="Enter Confirmation Code" required>
+                        <input type="submit" value="Check In" class="btn btn-primary btn-sm">
+                    </form>
+                </td>
 
-                <?php
-    if (!empty($smg)) {
-        echo "<div class='alert alert-$smg_type'>$smg</div>";
-    }
-    ?>
+
                 <table class="table table-bordered">
                     <thead>
                         <tr>

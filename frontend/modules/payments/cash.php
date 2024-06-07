@@ -34,6 +34,7 @@ if (isPost()) {
             'total_price' => $booking['total_price'], // Chuyển đổi từ cents sang dollars nếu cần
             'order_status' => 'Pending',
             'payment_method' => 'cash',
+            'booking_id' => $booking_id
         ];
 
         $dataud = [

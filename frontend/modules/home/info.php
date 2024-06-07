@@ -32,7 +32,7 @@ $profile = oneRaw("SELECT * FROM profile WHERE user_id = $user_id");
 <body id="page-top">
     <div class="container">
         <h1>User Profile</h1>
-        <form method="post" action="?modules=admin&action=udprofile">
+        <form method="post" action="?modules=home&action=udstatus">
             <label for="fullname">Fullname:</label><br>
             <input type="text" id="fullname" name="fullname" value="<?php echo $profile['fullname']; ?>"><br><br>
 

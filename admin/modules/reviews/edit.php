@@ -54,11 +54,7 @@ $msg_type = getFlashData('msg_type');
         require_once('templaces/layout/navbar.php');?>
             <div class="container">
                 <h2>Sửa Đánh Giá</h2>
-                <?php if (!empty($msg)): ?>
-                <div class="alert alert-<?php echo $msg_type; ?>">
-                    <?php echo $msg; ?>
-                </div>
-                <?php endif; ?>
+
                 <form action="" method="POST">
                     <div class="form-group">
                         <label for="room_id">Id phòng</label>

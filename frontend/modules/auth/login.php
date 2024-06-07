@@ -41,7 +41,8 @@ if(isPost()){
                 $dataInsert = [
                     'user_id' => $use_id,
                     'token' => $tokenLogin,
-                    'create_at' => date('Y-m-d H:i:s')
+                    'create_at' => date('Y-m-d H:i:s'),
+                    'expiry_date' => date('Y-m-d H:i:s', strtotime('+1 hour'))
                 ];  
                 $insertStatus = insert('tokenlogin', $dataInsert);
                 if($insertStatus){
@@ -108,6 +109,7 @@ $msg_type = getFlashData('msg_type');
                     </form>
                     <hr>
                     <p class="text-center"><a href="?modules=auth&action=forgot">Quên mật khẩu</a></p>
+
                     <p class="text-center"><a href="?modules=auth&action=register">Đăng ký</a></p>
                 </div>
             </div>

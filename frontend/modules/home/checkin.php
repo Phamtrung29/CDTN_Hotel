@@ -21,6 +21,14 @@ if ($update) {
         'pageTitle' => 'Check-in Confirmation',
         'confirmation_code' => $confirmation_code
     ];
+    $message1 = "Yêu cầu check in mới.";
+
+    $alert_data = [
+            'message' => $message1,
+            'status' => 'new'
+    ];
+
+    insert('alerts', $alert_data);
     layouts('header_lr', $data);
     ?>
 <div class="container">
@@ -28,6 +36,7 @@ if ($update) {
     <p>Your confirmation code is: <strong><?php echo $confirmation_code; ?></strong></p>
     <p>Please show this code to the staff to complete your check-in.</p>
 </div>
+<a href="?modules=home&action=myroom">Return</a>
 <?php
     layouts('footer', $data);
 } else {

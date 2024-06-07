@@ -23,11 +23,9 @@ $count = $countRow['total']; // Trích xuất giá trị 'total'
 
 // Tính tổng số trang
 $totalPages = ceil($count / $rowsPerPage);
-$flashMsg = getFlashData('smg');
-$flashMsgType = getFlashData('smg_type');
-if (!empty($flashMsg)) {
-    echo "<div class='alert alert-$flashMsgType'>$flashMsg</div>";
-}
+$msg = getFlashData('msg');
+$msg_type = getFlashData('msg_type');
+
 
 ?>
 
@@ -47,6 +45,11 @@ if (!empty($flashMsg)) {
                 <div class="container-fluid">
                     </hr>
                     <h2>Quản lý đánh giá</h2>
+                    <?php if (!empty($msg)): ?>
+                    <div class="alert alert-<?php echo $msg_type; ?>">
+                        <?php echo $msg; ?>
+                    </div>
+                    <?php endif; ?>
                     <p><a href="?modules=reviews&action=add" class=" btn btn-success btn-sm">Thêm đánh giá <i
                                 class="fas fa-plus"></i></a>
                     </p>

@@ -42,6 +42,11 @@ $smg_type = getFlashData('smg_type');
             <div class="content" id="content">
                 <div class="container-fluid">
                     <h1 class="h3 mb-4 text-gray-800">Quản lý người dùng</h1>
+                    <?php if (!empty($smg)): ?>
+                    <div class="alert alert-<?php echo $smg_type; ?>">
+                        <?php echo $smg; ?>
+                    </div>
+                    <?php endif; ?>
                     <div class="mb-3">
                         <a href="?modules=users&action=add" class="btn btn-success btn-sm">Thêm Người Dùng <i
                                 class="fas fa-plus"></i></a>

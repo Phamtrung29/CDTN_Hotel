@@ -52,7 +52,8 @@ if ($booking) {
         'total_price' => $payment_intent->amount_received / 100, // Chuyển đổi từ cents sang dollars
         'order_status' => 'Pending',
         'payment_method' => 'card',
-        'payment_status' => 'paid'
+        'payment_status' => 'paid',
+        'booking_id' => $booking_id
     ];
     $dataud = [
         'process' => 'yes'

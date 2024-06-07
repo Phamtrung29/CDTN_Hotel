@@ -82,8 +82,10 @@ $orders = getRaw("SELECT * FROM orderbooking WHERE user_id = $user_id $condition
                     <p><strong>Order status:</strong> <?php echo $order['order_status']; ?></p>
                     <p><strong>Payment method:</strong> <?php echo $order['payment_method']; ?></p>
                     <p><strong>Payment status:</strong> <?php echo $order['payment_status']; ?></p>
+                    <a href="?modules=home&action=order_detail&order_id=<?php echo $order['order_id']; ?>"
+                        class="btn btn-info">Order Details</a>
                 </div>
-                <?php if ($status === 'pending' || $status === 'confirmed') : ?>
+                <?php if ($status === 'confirmed') : ?>
                 <div class="df" style="display: flex; gap: 10px;">
                     <form action="?modules=home&action=checkin" method="POST">
                         <input type="hidden" name="order_id" value="<?php echo $order['order_id']; ?>">

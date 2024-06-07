@@ -157,6 +157,6 @@ function isLogin(){
 }
 
 function deleteExpiredTokens() {
-    $sql = "DELETE FROM tokenlogin WHERE TIMESTAMPDIFF(HOUR, create_at, expiry_date) = 1";
+    $sql = "DELETE FROM tokenlogin WHERE TIMESTAMPDIFF(HOUR, create_at, NOW()) >= 10";
     return query($sql);
 }

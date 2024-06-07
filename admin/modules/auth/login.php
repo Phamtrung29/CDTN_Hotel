@@ -122,6 +122,7 @@ $msg_type = getFlashData('msg_type');
                                     <div class="text-center">
                                         <a class="small" href="?modules=auth&action=forgot">Forgot Password?</a>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
